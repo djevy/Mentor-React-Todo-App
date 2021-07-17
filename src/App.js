@@ -4,20 +4,24 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+      Todo
+
+      Add dynamic number items left
+
+      All
+      Active 
+      Completed
+
+      Clear Completed
+
+      Drag and drop to reorder list
+
+      <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://darrenrevans.co.uk" target="_blank">Darren Evans</a>.
+      </div>
     </div>
   );
 }
