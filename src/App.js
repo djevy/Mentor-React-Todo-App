@@ -10,6 +10,13 @@ function App() {
 
   const [ toDoList, setToDoList ] = useState(data);
 
+  const handleToggle = (id) => {
+    let items = toDoList.map(item => {
+      return item.id === id ? { ...item, complete: !item.complete } : {...item} 
+    });
+    setToDoList(items)
+  }
+
   return (
     <div className="App">
 
@@ -17,7 +24,7 @@ function App() {
       
       <Header/>
       <InputField />
-      <ToDoList toDoList={toDoList}/>
+      <ToDoList toDoList={toDoList} handleToggle={handleToggle}/>
 
 
 
@@ -25,8 +32,8 @@ function App() {
       <div id="dragAndDrop"><p>Drag and drop to reorder list</p></div>
 
       <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="https://darrenrevans.co.uk" target="_blank">Darren Evans</a>.
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>. 
+      Coded by <a href="https://darrenrevans.co.uk" target="_blank" rel="noreferrer">Darren Evans</a>.
       </div>
     </div>
   );

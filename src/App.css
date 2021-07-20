@@ -1,3 +1,6 @@
+
+
+/* Layout */
 .App {
     display: grid;
 
@@ -33,3 +36,11 @@
     grid-column: 3;
     grid-row: 1;
 }
+
+
+
+/* To Do List */
+.completed {
+    text-decoration: line-through;
+ }
+

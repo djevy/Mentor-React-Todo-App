@@ -1,17 +1,13 @@
 import React from "react";
 import ToDo from "./ToDo";
 
-const ToDoList = ({toDoList}) => {
-
-// const addItem = () => {
-//     listItems.map();
-// }
+const ToDoList = ({toDoList, handleToggle}) => {
 
     return ( 
         <div className="list">
             {toDoList.map(todo => {
                 return (
-                    <ToDo todo={todo} />
+                    <ToDo todo={todo} handleToggle={handleToggle}/>
                 )
             })}
             <div id="listFooter">
@@ -26,9 +22,6 @@ const ToDoList = ({toDoList}) => {
                 <p id="clear">Clear Completed</p>
             </div>
         </div>
-
-
-
 
      );
 }
