@@ -12,9 +12,16 @@ function App() {
 
   const handleToggle = (id) => {
     let items = toDoList.map(item => {
-      return item.id === id ? { ...item, complete: !item.complete } : {...item} 
+      return item.id.toString() === id ? { ...item, complete: !item.complete } : {...item} 
     });
     setToDoList(items)
+  }
+
+  const handleFilter = () => {
+    let filteredItems = toDoList.filter(item => {
+      return !item.complete;
+    });
+    setToDoList(filteredItems);
   }
 
   return (
@@ -24,16 +31,16 @@ function App() {
       
       <Header/>
       <InputField />
-      <ToDoList toDoList={toDoList} handleToggle={handleToggle}/>
+      <ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}/>
 
 
 
 
       <div id="dragAndDrop"><p>Drag and drop to reorder list</p></div>
 
-      <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>. 
-      Coded by <a href="https://darrenrevans.co.uk" target="_blank" rel="noreferrer">Darren Evans</a>.
+      <div id="attribution">
+        <div>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>. </div>
+        <div>Coded by <a href="https://darrenrevans.co.uk" target="_blank" rel="noreferrer">Darren Evans</a>.</div>
       </div>
     </div>
   );

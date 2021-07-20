@@ -10,7 +10,7 @@ const ToDo = ({todo, handleToggle}) => {
 
    return (
        <div onClick={handleClick} id={todo.id} key={todo.id.toString()} name={todo.id} value={todo.id} className={todo.complete ? "completed" : ""}>
-           {todo.task}
+           <div className="item">{todo.task}</div>
        </div>
    );
 };

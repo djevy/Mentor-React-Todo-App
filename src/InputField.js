@@ -12,12 +12,11 @@ const InputField = () => {
         }
     }
     return ( 
-        <div className="inputField">
+        <div id="inputField">
             <input id="toDoInput" type="text" placeholder="Create a new todo..."
             value={inputBox} onChange={(e) => setInputBox(e.target.value)}
             onKeyDown={handleEnter}
             />
-            <p>{inputBox}</p>
         </div>
      );
 }

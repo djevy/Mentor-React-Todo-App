@@ -1,46 +1,130 @@
 
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+html {
+    background-color: hsl(235, 21%, 11%);
+    font-size: 18px;
+    
+}
 
-/* Layout */
+
+
+
+/* Dark */
+    /* - Very Dark Blue: hsl(235, 21%, 11%)
+    - Very Dark Desaturated Blue: hsl(235, 24%, 19%)
+    - Light Grayish Blue: hsl(234, 39%, 85%)
+    - Light Grayish Blue (hover): hsl(236, 33%, 92%)
+    - Dark Grayish Blue: hsl(234, 11%, 52%)
+    - Very Dark Grayish Blue: hsl(233, 14%, 35%)
+    - Very Dark Grayish Blue: hsl(237, 14%, 26%) */
 .App {
-    display: grid;
-
+    margin: 30px;
 }
 
-#listFooter {
-    display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: 1;
-}
-#numLeft {
-    grid-column: 1;
-}
-#itemState{
-    grid-column: 2;
-    display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: 1;
-}
-#clear {
-    grid-column: 3;
-}
-
-#showAll {
-    grid-column: 1;
-    grid-row: 1;
-}
-#showActive {
-    grid-column: 2;
-    grid-row: 1;
-}
-#showComplete {
-    grid-column: 3;
-    grid-row: 1;
-}
+    #pageTitle {
+        color: white;
+        font-size: 15px;
+    }
 
 
+    /* To Do List */
 
-/* To Do List */
-.completed {
-    text-decoration: line-through;
- }
 
+    #inputField, #list, #itemState {
+        border-radius: 5px;
+        border: solid;
+        background-color:hsl(237, 14%, 26%);
+    }
+    .item {
+        border-bottom: solid;
+        padding: 15px;
+    }
+
+    #inputField {
+        margin: 20px 0px;
+        padding: 15px;
+    }
+    #list {
+        margin-bottom: 20px;
+    }
+    .completed {
+        text-decoration: line-through rgba(255, 255, 255, 0.575);
+        color: rgba(255, 255, 255, 0.575);
+    }
+    .item {
+        cursor: pointer;
+        color: hsl(234, 39%, 85%);
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+
+    #itemState{
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: 1;
+        padding: 15px;
+
+    }
+    #showAll {
+        grid-column: 1;
+        grid-row: 1;
+        cursor: pointer;
+    }
+    #showActive {
+        grid-column: 2;
+        grid-row: 1;
+        cursor: pointer;
+    }
+    #showComplete {
+        grid-column: 3;
+        grid-row: 1;
+        cursor: pointer;
+    }
+
+
+    #listFooter {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        padding: 15px;
+        
+    }
+    #numLeft {
+        font-size: 15px;
+        color: hsl(234, 39%, 85%);
+    }
+    #clearCompleted {
+        font-size: 15px;
+        text-align: right;
+        cursor: pointer;
+    }
+
+
+    #dragAndDrop {
+        margin-bottom: 100px;
+    }
+    #attribution {
+        margin-top: 20px;
+        position: fixed;
+        bottom: 0px;
+        font-size: 12px;
+        z-index: -1;
+    }
+
+
+
+@media screen and(min-width:1440px) { 
+    #pageTitle {
+        grid-column: 2;
+    }
+    #inputField {
+        grid-column: 2;
+    }
+    #list {
+        grid-column: 2;  
+    }
+}
