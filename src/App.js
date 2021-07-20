@@ -1,22 +1,28 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import data from './data.json';
+
+import Header from './Header';
+import InputField from './InputField';
+import ToDoList from './ToDoList';
 
 function App() {
+
+  const [ toDoList, setToDoList ] = useState(data);
+
   return (
     <div className="App">
 
 
-      Todo
+      
+      <Header/>
+      <InputField />
+      <ToDoList toDoList={toDoList}/>
 
-      Add dynamic number items left
 
-      All
-      Active 
-      Completed
 
-      Clear Completed
 
-      Drag and drop to reorder list
+      <div id="dragAndDrop"><p>Drag and drop to reorder list</p></div>
 
       <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

@@ -1,0 +1,35 @@
+.App {
+    display: grid;
+
+}
+
+#listFooter {
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 1;
+}
+#numLeft {
+    grid-column: 1;
+}
+#itemState{
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 1;
+}
+#clear {
+    grid-column: 3;
+}
+
+#showAll {
+    grid-column: 1;
+    grid-row: 1;
+}
+#showActive {
+    grid-column: 2;
+    grid-row: 1;
+}
+#showComplete {
+    grid-column: 3;
+    grid-row: 1;
+}
