@@ -1,11 +1,11 @@
 [{
     "id": 1,
     "task": "Complete online JavaScript course",
-    "complete": true
+    "complete": false
   }, {
     "id": 2,
     "task": "Jog around the park 3x",
-    "complete": true
+    "complete": false
   }, {
     "id": 3,
     "task": "10 minutes meditation",
@@ -13,7 +13,7 @@
   }, {
     "id": 4,
     "task": "Read for 1 hour",
-    "complete": true
+    "complete": false
   }, {
     "id": 5,
     "task": "Pick up food",
@@ -21,5 +21,5 @@
   }, {
     "id": 6,
     "task": "Complete Todo App",
-    "complete": true
+    "complete": false
   }]

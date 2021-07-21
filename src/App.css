@@ -4,13 +4,14 @@
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
 }
-html {
-    background-color: hsl(235, 21%, 11%);
+#root {
+    background: url("images/bg-mobile-dark.jpg") top center no-repeat, hsl(235, 21%, 11%);
     font-size: 18px;
-    
 }
 
-
+/* Primary */
+    /* - Bright Blue: hsl(220, 98%, 61%)
+    - Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%) */
 
 
 /* Dark */
@@ -21,13 +22,21 @@ html {
     - Dark Grayish Blue: hsl(234, 11%, 52%)
     - Very Dark Grayish Blue: hsl(233, 14%, 35%)
     - Very Dark Grayish Blue: hsl(237, 14%, 26%) */
-.App {
-    margin: 30px;
-}
+
+
+    #content {
+        padding: 30px;
+    }
 
     #pageTitle {
         color: white;
         font-size: 15px;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 10fr 1fr;
+    }
+    #mode {
+        cursor: pointer;
     }
 
 
@@ -36,12 +45,7 @@ html {
 
     #inputField, #list, #itemState {
         border-radius: 5px;
-        border: solid;
-        background-color:hsl(237, 14%, 26%);
-    }
-    .item {
-        border-bottom: solid;
-        padding: 15px;
+        background-color:hsl(235, 24%, 19%)
     }
 
     #inputField {
@@ -51,39 +55,92 @@ html {
     #list {
         margin-bottom: 20px;
     }
+    .item {
+        border-bottom: solid 1px;
+        padding: 15px;
+        font-size: 12px;
+        color: hsl(234, 39%, 85%);
+        font-weight: 400;
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        
+    }
+    .circle {
+        grid-column: 1;
+        margin: auto;
+        border: solid 1px;
+        border-radius: 100%;
+        padding: 5px;
+        cursor: pointer;
+    }
+    .tick {
+        opacity: 0;
+    }
+    .ticked {
+        opacity: 100;
+    }
+    .circle.selected {
+        grid-column: 1;
+        margin: auto;
+        border: solid 1px;
+        border-radius: 100%;
+        padding: 5px;
+        background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    }
+    .task {
+        grid-column: 2;
+        margin: auto;
+        cursor: pointer;
+    }
+    .cross {
+        grid-column: 3;
+        margin: auto;
+        cursor: pointer;
+    }
+
     .completed {
         text-decoration: line-through rgba(255, 255, 255, 0.575);
         color: rgba(255, 255, 255, 0.575);
     }
-    .item {
-        cursor: pointer;
-        color: hsl(234, 39%, 85%);
-        font-weight: 400;
-        font-size: 15px;
-    }
 
+/* Complete State */
 
     #itemState{
         display: grid;
-        grid-template-columns: repeat(3, 33%);
+        grid-template-columns: 25% 25% 50%;
         grid-template-rows: 1;
-        padding: 15px;
-
+        padding: 15px 30px;
     }
     #showAll {
         grid-column: 1;
         grid-row: 1;
         cursor: pointer;
+        font-size: 15px;
+        text-align: right;
+        padding-right: 5px;
+        color: hsl(234, 11%, 52%);
+        font-weight: 700;
     }
     #showActive {
         grid-column: 2;
         grid-row: 1;
         cursor: pointer;
+        font-size: 15px;
+        text-align: center;
+        color: hsl(234, 11%, 52%);
+        font-weight: 700;
     }
-    #showComplete {
+    #showCompleted {
         grid-column: 3;
         grid-row: 1;
         cursor: pointer;
+        font-size: 15px;
+        padding-left: 5px;
+        color: hsl(234, 11%, 52%);
+        font-weight: 700;
+    }
+    #showAll.selectedState, #showActive.selectedState, #showCompleted.selectedState {
+        color: hsl(220, 98%, 61%);
     }
 
 
@@ -95,24 +152,27 @@ html {
     }
     #numLeft {
         font-size: 15px;
-        color: hsl(234, 39%, 85%);
+        color: hsl(234, 11%, 52%);
     }
     #clearCompleted {
         font-size: 15px;
         text-align: right;
         cursor: pointer;
+        color: hsl(234, 11%, 52%);
     }
 
 
     #dragAndDrop {
+        margin-top: 60px;
         margin-bottom: 100px;
+        text-align: center;
+        color: hsl(234, 11%, 52%);
     }
     #attribution {
         margin-top: 20px;
-        position: fixed;
-        bottom: 0px;
         font-size: 12px;
-        z-index: -1;
+        text-align: center;
+        background-color: white;
     }
 
 

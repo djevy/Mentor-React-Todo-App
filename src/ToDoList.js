@@ -18,7 +18,7 @@ const ToDoList = ({toDoList, handleToggle, handleFilter}) => {
             </div>
 
             <div id="itemState">
-                <p id="showAll">All</p>
+                <p className="selectedState" id="showAll">All</p>
                 <p id="showActive">Active </p>
                 <p id="showCompleted">Completed</p>
             </div>

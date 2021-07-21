@@ -14,7 +14,7 @@ function App() {
     let items = toDoList.map(item => {
       return item.id.toString() === id ? { ...item, complete: !item.complete } : {...item} 
     });
-    setToDoList(items)
+    setToDoList(items);
   }
 
   const handleFilter = () => {
@@ -27,11 +27,12 @@ function App() {
   return (
     <div className="App">
 
-
       
-      <Header/>
-      <InputField />
-      <ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}/>
+      <div id="content">
+        <Header/>
+        <InputField />
+        <ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}/>
+      </div>
 
 
 
