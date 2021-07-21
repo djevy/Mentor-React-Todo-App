@@ -117,7 +117,7 @@
         cursor: pointer;
         font-size: 15px;
         text-align: right;
-        padding-right: 5px;
+        padding-right: 10px;
         color: hsl(234, 11%, 52%);
         font-weight: 700;
     }
@@ -135,7 +135,7 @@
         grid-row: 1;
         cursor: pointer;
         font-size: 15px;
-        padding-left: 5px;
+        padding-left: 10px;
         color: hsl(234, 11%, 52%);
         font-weight: 700;
     }
@@ -175,7 +175,15 @@
         background-color: white;
     }
 
+    .hide {
+        display: none;
+    }
 
+@media screen and(min-width:375px) { 
+    #root {
+        background: url("images/bg-desktop-dark.jpg") top center no-repeat, hsl(235, 21%, 11%);
+    }
+}
 
 @media screen and(min-width:1440px) { 
     #pageTitle {

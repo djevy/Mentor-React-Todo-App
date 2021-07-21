@@ -24,6 +24,49 @@ function App() {
     setToDoList(filteredItems);
   }
 
+  const allFilter = () => {
+    const filterDone = document.getElementsByClassName("item done");
+    for (let i = 0; i < filterDone.length; i++) {
+      filterDone[i].classList.remove("hide");
+    }
+    const filteredNotDone = document.getElementsByClassName("item notDone");
+    for (let i = 0; i < filteredNotDone.length; i++) {
+      filteredNotDone[i].classList.remove("hide");
+    }
+    document.getElementById("showAll").classList.add("selectedState");
+    document.getElementById("showActive").classList.remove("selectedState");
+    document.getElementById("showCompleted").classList.remove("selectedState");
+  }
+
+  const activeFilter = () => {
+    const filterDone = document.getElementsByClassName("item done");
+    for (let i = 0; i < filterDone.length; i++) {
+      filterDone[i].classList.add("hide");
+    }
+    const filteredNotDone = document.getElementsByClassName("item notDone");
+    for (let i = 0; i < filteredNotDone.length; i++) {
+      filteredNotDone[i].classList.remove("hide");
+    }
+    document.getElementById("showAll").classList.remove("selectedState");
+    document.getElementById("showActive").classList.add("selectedState");
+    document.getElementById("showCompleted").classList.remove("selectedState");
+
+  }
+
+  const completedFilter = () => {
+    const filterDone = document.getElementsByClassName("item done");
+    for (let i = 0; i < filterDone.length; i++) {
+      filterDone[i].classList.remove("hide");
+    }
+    const filteredNotDone = document.getElementsByClassName("item notDone");
+    for (let i = 0; i < filteredNotDone.length; i++) {
+      filteredNotDone[i].classList.add("hide");
+    }
+    document.getElementById("showAll").classList.remove("selectedState");
+    document.getElementById("showActive").classList.remove("selectedState");
+    document.getElementById("showCompleted").classList.add("selectedState");
+  }
+
   return (
     <div className="App">
 
@@ -31,7 +74,8 @@ function App() {
       <div id="content">
         <Header/>
         <InputField />
-        <ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}/>
+        <ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}
+        allFilter={allFilter} activeFilter={activeFilter} completedFilter={completedFilter}/>
       </div>
 
 
