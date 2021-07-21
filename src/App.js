@@ -52,6 +52,9 @@ function App() {
     document.getElementById("showCompleted").classList.remove("selectedState");
 
   }
+ 
+  // const filteredNotDone = document.getElementsByClassName("item notDone");
+  // const value = filteredNotDone.length;
 
   const completedFilter = () => {
     const filterDone = document.getElementsByClassName("item done");
@@ -75,7 +78,8 @@ function App() {
         <Header/>
         <InputField />
         <ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}
-        allFilter={allFilter} activeFilter={activeFilter} completedFilter={completedFilter}/>
+        allFilter={allFilter} activeFilter={activeFilter} completedFilter={completedFilter}
+        />
       </div>
 
 

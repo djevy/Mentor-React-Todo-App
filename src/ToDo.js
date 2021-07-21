@@ -35,6 +35,8 @@ const ToDo = ({todo, handleToggle, handleFilter}) => {
             setTick("tick");
             setDone("item notDone");
         }
+        const filteredNotDone = document.getElementsByClassName("item notDone");
+        document.getElementById("num").innerText = filteredNotDone.length;
     },[handleClick]);
 
    return (
