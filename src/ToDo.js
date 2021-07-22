@@ -20,24 +20,30 @@ const ToDo = ({todo, handleToggle, handleFilter}) => {
         handleFilter()
 
     }
-    
+    useEffect(()=> {
+            if(todo.complete) {
+                setCompleted("task completed");
+                setCircle("circle selected");
+                setTick("ticked");
+                setDone("item done");
+            }
+            else {
+                setCompleted("task");
+                setCircle("circle");
+                setTick("tick");
+                setDone("item notDone");
+            }
+
+    }, [todo.complete])
     
     useEffect(()=> {
-        if(todo.complete) {
-            setCompleted("task completed");
-            setCircle("circle selected");
-            setTick("ticked");
-            setDone("item done");
-        }
-        else {
-            setCompleted("task");
-            setCircle("circle");
-            setTick("tick");
-            setDone("item notDone");
-        }
         const filteredNotDone = document.getElementsByClassName("item notDone");
-        document.getElementById("num").innerText = filteredNotDone.length;
-    },[handleClick]);
+        document.getElementById("num").innerText = filteredNotDone.length ;
+    }, [handleClick])
+
+
+    
+
 
    return (
        

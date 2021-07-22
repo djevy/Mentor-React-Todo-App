@@ -10,6 +10,12 @@ function App() {
 
   const [ toDoList, setToDoList ] = useState(data);
 
+  const addTask = (inputBox) => {
+    let tasksCopy = [...toDoList];
+    tasksCopy.push({id: toDoList.length + 1, task: inputBox, complete: false });
+    setToDoList(tasksCopy);
+  }
+
   const handleToggle = (id) => {
     let items = toDoList.map(item => {
       return item.id.toString() === id ? { ...item, complete: !item.complete } : {...item} 
@@ -76,7 +82,7 @@ function App() {
       
       <div id="content">
         <Header/>
-        <InputField />
+        <InputField addTask={addTask}/>
         <ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}
         allFilter={allFilter} activeFilter={activeFilter} completedFilter={completedFilter}
         />

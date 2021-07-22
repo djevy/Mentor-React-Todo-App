@@ -1,22 +1,25 @@
 import { useState } from "react";
 
 
-const InputField = () => {
+const InputField = ({addTask}) => {
 
     const [inputBox, setInputBox] = useState("");
-    const listItems = [];
+
+    const handleChange = (e) => {
+        setInputBox(e.target.value);
+    }
 
     const handleEnter = (e) => {
         if(e.key === "Enter") {
-            listItems.push({inputBox})
+            addTask(inputBox);
         }
     }
     return ( 
         <div id="inputField">
             <input id="toDoInput" type="text" placeholder="Create a new todo..."
-            value={inputBox} onChange={(e) => setInputBox(e.target.value)}
-            onKeyDown={handleEnter}
+            value={inputBox} onChange={handleChange} onKeyDown={handleEnter}
             />
+            <p>{inputBox}</p>
         </div>
      );
 }
