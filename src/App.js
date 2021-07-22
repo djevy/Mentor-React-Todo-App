@@ -8,6 +8,45 @@ import ToDoList from './ToDoList';
 
 function App() {
 
+  function lightMode() {
+    document.getElementById("root").classList.toggle("light");
+    document.getElementById("inputField").classList.toggle("light");
+    document.getElementById("headerCircle").classList.toggle("light");
+    document.getElementById("list").classList.toggle("light");
+    document.getElementById("itemState").classList.toggle("light");
+    document.getElementById("toDoInput").classList.toggle("light");
+    
+    let item = document.getElementsByClassName("item");
+    for(var i = 0; i < item.length; i++) {
+      item[i].classList.toggle("light");
+    }
+    let completed = document.getElementsByClassName("completed");
+    for(var i = 0; i < completed.length; i++) {
+      completed[i].classList.toggle("light");
+    }
+
+    document.getElementById("showAll").classList.toggle("light");
+    document.getElementById("showActive").classList.toggle("light");
+    document.getElementById("showCompleted").classList.toggle("light");
+    document.getElementById("numLeft").classList.toggle("light");
+    document.getElementById("clearCompleted").classList.toggle("light");
+    document.getElementById("dragAndDrop").classList.toggle("light");
+    document.getElementById("attribution").classList.toggle("light");
+  }
+  let darkMode = true;
+  const themeToggle = () => {
+
+    if(darkMode === true) {
+      darkMode = false;
+      document.getElementById("mode").src = "images/icon-moon.svg";
+      lightMode();
+    } else if (darkMode === false) {
+      darkMode = true;
+      document.getElementById("mode").src = "images/icon-sun.svg";
+      lightMode();
+    }
+  }
+
   const [ toDoList, setToDoList ] = useState(data);
 
   const addTask = (inputBox) => {
@@ -81,7 +120,7 @@ function App() {
 
       
       <div id="content">
-        <Header/>
+        <Header themeToggle={themeToggle}/>
         <InputField addTask={addTask}/>
         <ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}
         allFilter={allFilter} activeFilter={activeFilter} completedFilter={completedFilter}

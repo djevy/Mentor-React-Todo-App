@@ -20,6 +20,10 @@
     "complete": false
   }, {
     "id": 6,
-    "task": "Complete Todo App",
-    "complete": false
+    "task": "Complete React Todo App",
+    "complete": true
+  }, {
+    "id": 7,
+    "task": "Show off Todo App",
+    "complete": true
   }]

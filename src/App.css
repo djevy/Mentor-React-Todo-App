@@ -5,9 +5,14 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 #root {
-    background: url("images/bg-mobile-dark.jpg") top center no-repeat, hsl(235, 21%, 11%);
+    background: url("images/bg-desktop-dark.jpg") top center no-repeat, hsl(235, 21%, 11%);
     font-size: 18px;
     height: 100%
+}
+@media screen and (min-width:375px) { 
+    #root {
+        background: url("images/bg-desktop-dark.jpg") top center no-repeat, hsl(235, 21%, 11%);
+    }
 }
 
 /* Primary */
@@ -24,7 +29,9 @@
     - Very Dark Grayish Blue: hsl(233, 14%, 35%)
     - Very Dark Grayish Blue: hsl(237, 14%, 26%) */
 
-
+    .App {
+        height: 100vh;
+    }
     #content {
         padding: 30px;
     }
@@ -49,9 +56,21 @@
         background-color:hsl(235, 24%, 19%)
     }
 
+    #headerCircle {
+        color: hsl(234, 39%, 85%);
+    }
     #inputField {
         margin: 20px 0px;
         padding: 15px;
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+    }
+    #toDoInput {
+        border: none;
+        background-color:hsl(235, 24%, 19%);
+        color: hsl(234, 39%, 85%);
+        font-size: 18px;
+        grid-column: 2;
     }
     #list {
         margin-bottom: 20px;
@@ -59,7 +78,7 @@
     .item {
         border-bottom: solid 1px;
         padding: 15px;
-        font-size: 12px;
+        font-size: 14px;
         color: hsl(234, 39%, 85%);
         font-weight: 400;
         display: grid;
@@ -73,6 +92,8 @@
         border-radius: 100%;
         padding: 5px;
         cursor: pointer;
+        width: 12px;
+        height: 12px;
     }
     .tick {
         opacity: 0;
@@ -90,7 +111,7 @@
     }
     .task {
         grid-column: 2;
-        margin: auto;
+        margin: auto 5px;
         cursor: pointer;
     }
     .cross {
@@ -143,6 +164,9 @@
     #showAll.selectedState, #showActive.selectedState, #showCompleted.selectedState {
         color: hsl(220, 98%, 61%);
     }
+    #showActive:hover, #showCompleted:hover, #showAll:hover {
+        color: hsl(235, 19%, 35%);
+    }
 
 
     #listFooter {
@@ -171,29 +195,88 @@
     }
     #attribution {
         margin-top: 20px;
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
-        background-color: white;
+        color: white;
     }
 
     .hide {
         display: none;
     }
 
-@media screen and(min-width:375px) { 
-    #root {
-        background: url("images/bg-desktop-dark.jpg") top center no-repeat, hsl(235, 21%, 11%);
-    }
-}
+/* light */
+    /* - Very Light Gray: hsl(0, 0%, 98%)
+    - Very Light Grayish Blue: hsl(236, 33%, 92%)
+    - Light Grayish Blue: hsl(233, 11%, 84%)
+    - Dark Grayish Blue: hsl(236, 9%, 61%)
+    - Very Dark Grayish Blue: hsl(235, 19%, 35%) */
 
-@media screen and(min-width:1440px) { 
-    #pageTitle {
+    #root.light {
+        background: url("images/bg-desktop-light.jpg") top center no-repeat, hsl(236, 33%, 92%);
+    }
+    @media screen and (min-width:375px) { 
+        #root.light {
+            background: url("images/bg-desktop-light.jpg") top center no-repeat, hsl(236, 33%, 92%);
+        }
+    }
+    /* To Do List */
+    #inputField.light, #list.light, #itemState.light {
+        background-color:hsl(0, 0%, 98%);
+    }
+    #headerCircle.light{
+        color: hsl(235, 19%, 35%);
+    }
+    #toDoInput.light {
+        background-color:hsl(0, 0%, 98%);
+        color: hsl(235, 19%, 35%);
+    }
+
+    .item.light {
+        color: hsl(235, 19%, 35%);
+    }
+
+    .completed.light {
+        text-decoration: line-through hsl(233, 11%, 84%);
+        color: hsl(233, 11%, 84%);
+    }
+
+/* Complete State */
+
+    #showAll.light, #showActive.light, #showCompleted.light {
+        color: hsl(234, 11%, 52%);
+
+    }
+    #showAll.selectedState.light, #showActive.selectedState.light, #showCompleted.selectedState.light {
+        color: hsl(220, 98%, 61%);
+    }
+    #showActive.light:hover, #showCompleted.light:hover, #showAll.light:hover {
+        color: hsl(235, 19%, 35%);
+    }
+
+
+    #numLeft.light, #clearCompleted.light, #dragAndDrop.light {
+        color: hsl(234, 11%, 52%);
+    }
+
+
+    #attribution.light {
+    color: black;
+    }
+
+
+
+@media screen and (min-width:1440px) { 
+    .App {
+        display: grid;
+        grid-template-columns: repeat(3, 33.3%);
+    }
+    #content {
         grid-column: 2;
     }
-    #inputField {
+    #dragAndDrop {
         grid-column: 2;
     }
-    #list {
+    #attribution {
         grid-column: 2;  
     }
 }
