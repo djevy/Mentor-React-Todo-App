@@ -5,7 +5,7 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 #root {
-    background: url("images/bg-desktop-dark.jpg") top center no-repeat, hsl(235, 21%, 11%);
+    background: url("images/bg-mobile-dark.jpg") top center no-repeat, hsl(235, 21%, 11%);
     font-size: 18px;
     height: 100%
 }
@@ -30,7 +30,7 @@
     - Very Dark Grayish Blue: hsl(237, 14%, 26%) */
 
     .App {
-        height: 100vh;
+        min-height: 100vh;
     }
     #content {
         padding: 30px;
@@ -47,6 +47,9 @@
         cursor: pointer;
     }
 
+    a {
+        color: green;
+    }
 
     /* To Do List */
 
@@ -189,12 +192,11 @@
 
     #dragAndDrop {
         margin-top: 60px;
-        margin-bottom: 100px;
+        margin-bottom: 80px;
         text-align: center;
         color: hsl(234, 11%, 52%);
     }
     #attribution {
-        margin-top: 20px;
         font-size: 14px;
         text-align: center;
         color: white;
@@ -212,7 +214,7 @@
     - Very Dark Grayish Blue: hsl(235, 19%, 35%) */
 
     #root.light {
-        background: url("images/bg-desktop-light.jpg") top center no-repeat, hsl(236, 33%, 92%);
+        background: url("images/bg-mobile-light.jpg") top center no-repeat, hsl(236, 33%, 92%);
     }
     @media screen and (min-width:375px) { 
         #root.light {
@@ -236,8 +238,8 @@
     }
 
     .completed.light {
-        text-decoration: line-through hsl(233, 11%, 84%);
-        color: hsl(233, 11%, 84%);
+        text-decoration: line-through rgb(214 212 219);
+        color: rgb(214 212 219);
     }
 
 /* Complete State */

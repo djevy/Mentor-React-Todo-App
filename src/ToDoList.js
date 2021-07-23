@@ -2,7 +2,7 @@
 import { Droppable } from 'react-beautiful-dnd';
 import ToDo from "./ToDo";
 
-const ToDoList = ({tasks, toDoList, handleToggle, handleFilter, allFilter, activeFilter, completedFilter}) => {
+const ToDoList = ({toDoList, handleToggle, handleFilter, allFilter, activeFilter, completedFilter}) => {
 
     return ( 
         <div>
