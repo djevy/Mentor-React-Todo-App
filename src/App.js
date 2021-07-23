@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { DragDropContext} from 'react-beautiful-dnd';
 import './App.css';
 import data from './data.json';
 
@@ -21,8 +22,8 @@ function App() {
       item[i].classList.toggle("light");
     }
     let completed = document.getElementsByClassName("completed");
-    for(var i = 0; i < completed.length; i++) {
-      completed[i].classList.toggle("light");
+    for(var j = 0; j < completed.length; j++) {
+      completed[j].classList.toggle("light");
     }
 
     document.getElementById("showAll").classList.toggle("light");
@@ -48,6 +49,16 @@ function App() {
   }
 
   const [ toDoList, setToDoList ] = useState(data);
+  const [tasks, setTasks] = useState(toDoList);
+
+  function handleOnDragEnd(result) {
+    if (!result.destination) return;
+    const items = Array.from(tasks);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    
+    setToDoList(items);
+  }
 
   const addTask = (inputBox) => {
     let tasksCopy = [...toDoList];
@@ -98,9 +109,6 @@ function App() {
 
   }
  
-  // const filteredNotDone = document.getElementsByClassName("item notDone");
-  // const value = filteredNotDone.length;
-
   const completedFilter = () => {
     const filterDone = document.getElementsByClassName("item done");
     for (let i = 0; i < filterDone.length; i++) {
@@ -122,9 +130,12 @@ function App() {
       <div id="content">
         <Header themeToggle={themeToggle}/>
         <InputField addTask={addTask}/>
-        <ToDoList toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}
-        allFilter={allFilter} activeFilter={activeFilter} completedFilter={completedFilter}
-        />
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <ToDoList tasks={tasks} toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}
+          allFilter={allFilter} activeFilter={activeFilter} completedFilter={completedFilter}
+          />
+        </DragDropContext>
+
       </div>
 
 
