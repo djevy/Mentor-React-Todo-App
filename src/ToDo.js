@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 
  
@@ -9,11 +9,11 @@ const ToDo = ({todo, handleToggle, handleFilter, index}) => {
     const [tick, setTick] = useState("tick");
     const [done, setDone] = useState("item notDone");
     
-    const handleClick = (e) => {
+    const handleClick = useCallback((e) => {
         e.preventDefault()
         handleToggle(e.currentTarget.id)
 
-    }
+    }, [handleToggle])
     const handleCross = (e) => {
         
         e.preventDefault()
